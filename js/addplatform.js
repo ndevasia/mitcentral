@@ -1,7 +1,6 @@
 function addPlatform() { 
   // create a new div element 
   const newDiv = document.createElement("div"); 
-
   // and give it some content 
   const newContent = document.createTextNode("New platform"); 
   
@@ -10,5 +9,5 @@ function addPlatform() {
 
   // add the newly created element and its content into the DOM 
   const currentDiv = document.getElementById("platforms"); 
-  currentDiv.appendChild(newDiv); 
+  currentDiv.appendChild(newDiv);
 }
