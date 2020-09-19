@@ -1,11 +1,38 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Authentication Example</title>
-  <script src="js/load-data.js"></script>
+    <meta charset="UTF-8">
+    <title>MIT Central</title>
+    <script src="js/firebase.js"></script>
+    <script src="js/styling.js"></script>
+    <script src="js/load-data.js"></script>
+    <script src="js/storedata.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDqJaHM0T7Au-NQc2cFstjea_5LnaYiVJA",
+        authDomain: "mit-central.firebaseapp.com",
+        databaseURL: "https://mit-central.firebaseio.com",
+        projectId: "mit-central",
+        storageBucket: "mit-central.appspot.com",
+        messagingSenderId: "415588895548",
+        appId: "1:415588895548:web:ff605fe5fae301ba0c6c39",
+        measurementId: "G-WBBWS6BJJR"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 </head>
 
-<body onload="loadClasses()">
+<body onload="">
   <form>
     <div>
       <input id="email" type="text" placeholder="Email...">
@@ -33,7 +60,9 @@
       <button id="sign-out">Sign Out</button>
     </div>
   </form>
-  <a href="your-classes.html">link to page</a>
+  <div id="testing"></div>
+
+
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
@@ -88,8 +117,14 @@
 
       //TODO: dont add to database if error message
       db.collection("users").doc(email).set({
-              classes: {},
-              platforms: {},
+              classes: [{
+                  'name': '6.031', 'color': '#f58585', 
+                  'links': [
+                      {'name': 'Lecture', 'link': 'https://canvas.mit.edu'},
+                      {'name': 'Website', 'link': 'https://www.piazza.com'}
+                    ]
+                }],
+              platforms: [],
           })
       .catch(function(error) {
           console.error("Error adding document: ", error);
