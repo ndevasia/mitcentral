@@ -3,9 +3,10 @@
 
 <head>
   <title>Authentication Example</title>
+  <script src="js/load-data.js"></script>
 </head>
 
-<body>
+<body onload="loadClasses()">
   <form>
     <div>
       <input id="email" type="text" placeholder="Email...">
@@ -56,8 +57,9 @@
         measurementId: "G-WBBWS6BJJR"
       };
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+      var FBapp = firebase.initializeApp(firebaseConfig);
       firebase.analytics();
+
 
     </script>
   <!--Handle auth events-->
@@ -89,6 +91,17 @@
         console.log(errorMessage)
         document.getElementById('error-message').innerHTML = errorMessage;
       });
+
+      firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        .then(function() {
+          return firebase.auth().signInWithEmailAndPassword(email, password);
+        })
+        .catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(error);
+        });
 
       //TODO: dont add to database if error message
       db.collection("users").doc(email).set({

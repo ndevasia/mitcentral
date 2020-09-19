@@ -95,6 +95,11 @@ a {
     width: 80%;
 }
 
+.class-link {
+    display: inline;
+    margin: 10px;
+}
+
 .class-link:hover {
     font-weight: bold;
 }
