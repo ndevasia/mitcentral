@@ -48,7 +48,13 @@
             </div>
         </div>
         <div class="platformButton">
-                <button id="addclass" onclick="addPlatform()">Add a platform</button>
+            <button id="addclass" onclick="unhide()">Add a platform</button>
+        </div>
+        
+        <div class="hiddenPlatformFields">
+            <input type='text' id='platNameSubmit'>Platform name</input>
+            <input type='url' id='platLinkSubmit'>Platform link</input>
+            <button onclick='submitPlatform()'>Submit</button>
         </div>
     
         <footer>
