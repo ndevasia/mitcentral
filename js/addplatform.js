@@ -19,6 +19,7 @@ function newPlatformHTML(platform, link){
 }
 
 function unhide() {
+  console.log("unhide");
   const x = document.getElementById("hiddenPlatformFields");
   if (x.style.display === "none") {
     x.style.display = "block";
