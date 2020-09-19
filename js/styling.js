@@ -25,7 +25,7 @@ function colorTab() {
     Array.from(document.getElementsByClassName('tab')).forEach((tab) => {
         const tabName = tab.id.slice(0, -4); // tab IDs are in format pageName-tab
         if (pageName === tabName) {
-            tab.style.backgroundColor = "lightgray";
+            tab.style.backgroundColor = "white";
         }
     });
 }
