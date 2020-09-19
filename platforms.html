@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <title>MIT Central</title>
     <script src="js/styling.js"></script>
+    <script src="js/storedata.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
 </head>
 
-<body onload="colorBoxes()">
+<body onload="colorBoxes();colorTab()">
     <main>
         <div id="header">
-            <p> MIT Central</p>
+            <span id="page-title"> MIT Central</span>
+            <a href="platforms.html" class="tab" id="platforms-tab">Platforms</a>
+            <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
 
         <div id="platforms">
@@ -62,13 +65,15 @@
                     Gradescope
                 </a>
             </div>
-        </div>
-        <div class="platformButton">
-            <button id="addclass" onclick="unhide()">Add a platform</button>
+            <div id="add-button" class="box platform">
+                <a onclick="unhide()" class="platform-button">
+                    +
+                </a>
+            </div>
         </div>
         
-        <div class="hiddenPlatformFields">
-            <input type='text' id='platNameSubmit'>Platform name</input>
+        <div class="hiddenField" id="hiddenPlatformFields" style="display: none;">
+            <input type='text' id='platNameSubmit'>Platform name</input><br>
             <input type='url' id='platLinkSubmit'>Platform link</input>
             <button onclick='submitPlatform()'>Submit</button>
         </div>

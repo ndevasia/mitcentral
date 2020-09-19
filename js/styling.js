@@ -4,6 +4,7 @@ const brandColors = new Map([
     ['Gradescope', '#1b7771']
 ])
 
+/* Color platform boxes based on the brand colors of the website they link to */
 function colorBoxes() {
     const platforms = document.getElementById('platforms');
     Array.from(platforms.children).forEach((child) => {
@@ -14,4 +15,17 @@ function colorBoxes() {
             child.style.backgroundColor = color.desaturate(1).brighten(2).hex();
         }
     })
+}
+
+/* Color the active tab */
+function colorTab() {
+    // Get the last part of the URL (www.whatever.com/page-name.html) and remove the .html
+    const pageName = document.location.pathname.split("/").pop().split(".")[0];
+
+    Array.from(document.getElementsByClassName('tab')).forEach((tab) => {
+        const tabName = tab.id.slice(0, -4); // tab IDs are in format pageName-tab
+        if (pageName === tabName) {
+            tab.style.backgroundColor = "white";
+        }
+    });
 }
