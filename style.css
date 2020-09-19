@@ -65,10 +65,10 @@ a {
 
 .platform {
     display: inline-flex;
-    height: 235px;
+    height: 230px;
     margin: 50px;
     padding: 5px;
-    width: 235px;
+    width: 230px;
 }
 
 .platform-button {
@@ -90,9 +90,13 @@ a {
 }
 
 .class {
-    font-size: 125%;
+    font-size: 150%;
     margin: 25px;
     width: 80%;
+}
+
+.class-link:hover {
+    font-weight: bold;
 }
 
 .title {
