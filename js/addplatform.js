@@ -9,8 +9,9 @@ function submitPlatform(){
     newDiv.innerHTML = newHtml;
 
     // add the newly created element and its content into the DOM 
-    const currentDiv = document.getElementById("platforms"); 
-    currentDiv.appendChild(newDiv);
+    const parentDiv = document.getElementById("platforms"); 
+    const refDiv = document.getElementById("addButton");
+    parentDiv.insertBefore(newDiv, refDiv);
 }
 
 /* Add https:// and/or www to a link, as appropriate, to ensure that it reads as absolute */
@@ -32,12 +33,12 @@ function cleanLink(link) {
 }
 
 function newPlatformHTML(platform, link){
-	const newHtml = "<a href='"+link+"' target='_blank' class='platform-button'>\n"+platform+"</a>";
+	console.log(linkify(link));
+	const newHtml = "<a href='"+linkify(link)+"' target='_blank' class='platform-button'>\n"+platform+"</a>";
 	return newHtml;
 }
 
 function unhide() {
-  console.log("unhide");
   const x = document.getElementById("hiddenPlatformFields");
   if (x.style.display === "none") {
     x.style.display = "block";
