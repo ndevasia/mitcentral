@@ -55,12 +55,20 @@ a {
     text-decoration: none;
 }
 
+#platforms {
+    display: inline-flex;
+    flex-wrap : wrap;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
 .platform {
     display: inline-flex;
-    height: 200px;
+    height: 235px;
     margin: 50px;
     padding: 5px;
-    width: 200px;
+    width: 235px;
 }
 
 .platform-button {
@@ -71,6 +79,10 @@ a {
     font-weight: bold;
     justify-content: center;
     width: 100%; 
+}
+
+.platform:hover {
+    filter: brightness(80%);
 }
 
 #add-button {
