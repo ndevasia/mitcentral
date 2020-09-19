@@ -15,8 +15,7 @@ function submitPlatform(){
 }
 
 function newPlatformHTML(platform, link){
-	console.log(linkify(link));
-	const newHtml = "<a href='"+linkify(link)+"' target='_blank' class='platform-button'>\n"+platform+"</a>";
+	const newHtml = "<a href='"+link+"' target='_blank' class='platform-button'>\n"+platform+"</a>";
 	return newHtml;
 }
 
