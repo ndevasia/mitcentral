@@ -3,15 +3,24 @@
 }
 
 #header {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #cecece;
     font-size: 175%;
     font-weight: bold;
     padding: 0 30px 0 30px;
 }
 
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
 .box {
-    background-color: #e2edff;
-    border: 2px solid #023281;
+    background-color: #e5ecf8;
+    border: 3px solid #08214a;
     border-radius: 10px;
     box-shadow: 2px 2px 2px grey;
     text-align: center;
@@ -56,10 +65,11 @@ a {
 }
 
 footer {
-    border-top: 1px solid black;
+    border-top: 1px solid #cecece;
     bottom: 0;
     font-size: 90%;
     padding: 10px 30px 10px 30px;
     position: absolute;
     width: 100%;
 }
+
