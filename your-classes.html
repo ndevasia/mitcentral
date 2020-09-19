@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>MIT Central</title>
+    <script src="js/styling.js"></script>
     <link rel="stylesheet" href="style.css">
     <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
 </head>
 
-<body>
+<body onload="colorTab()">
     <main>
         <div id="header">
-            <ul class="tabs">
-                <li id = "platforms-tab"><a href="platforms.html">Platforms</a></li>
-                <li if = "your-classes-tab"><a href="your-classes.html">Your Classes</a></li>
-             </ul>
+            <span id="page-title"> MIT Central</span>
+            <a href="platforms.html" class="tab" id="platforms-tab">Platforms</a>
+            <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
         
-
         <div id="classes">
             <div class="box class">
                 <p class="title">6.031</p>
