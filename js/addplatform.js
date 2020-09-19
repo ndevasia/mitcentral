@@ -10,7 +10,25 @@ function submitPlatform(){
 
     // add the newly created element and its content into the DOM 
     const parentDiv = document.getElementById("platforms"); 
-    const refDiv = document.getElementById("addButton");
+    const refDiv = document.getElementById("add-button");
+    parentDiv.insertBefore(newDiv, refDiv);
+    unhide();
+}
+
+function submitClass(){
+	const userInputClass = document.getElementById("classNameSubmit").value;
+  const userInputClassLink = cleanLink(document.getElementById("classLinkSubmit").value);
+  const userInputClassType = document.getElementById("classTypeSubmit").value;
+	const newHtml = newClassHTML(userInputClass, userInputClassLink, userInputClassType);
+	// create a new div element 
+    const newDiv = document.createElement("div"); 
+    newDiv.classList.add("box");
+    newDiv.classList.add("class");
+    newDiv.innerHTML = newHtml;
+
+    // add the newly created element and its content into the DOM 
+    const parentDiv = document.getElementById("classes"); 
+    const refDiv = document.getElementById("add-button");
     parentDiv.insertBefore(newDiv, refDiv);
 }
 
@@ -37,11 +55,19 @@ function newPlatformHTML(platform, link){
 	return newHtml;
 }
 
+function newClassHTML(className, link, type){
+	const newHtml = "<p class='title'>"+className+"</p>\n<div class='links'>\n<div class='link'>\n<a href='"+link+"' target='_blank'>"+type+"</a>\n</div>\n</div>";
+	return newHtml;
+}
+
 function unhide() {
   const x = document.getElementById("hiddenPlatformFields");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
-    x.style.display = "none";
+  	const children = x.children;
+  	for (var i = 0; i < children.length; i++){
+  		children[i].value = '';
+  	}
   }
 }
