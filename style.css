@@ -1,0 +1,65 @@
+:root {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#header {
+    border-bottom: 1px solid black;
+    font-size: 175%;
+    font-weight: bold;
+    padding: 0 30px 0 30px;
+}
+
+.box {
+    background-color: #e2edff;
+    border: 2px solid #023281;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+    text-align: center;
+    vertical-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.platform {
+    display: inline-flex;
+    height: 200px;
+    margin: 50px;
+    padding: 5px;
+    width: 200px;
+}
+
+.platform-button {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    font-size: 200%;
+    font-weight: bold;
+    justify-content: center;
+    width: 100%; 
+}
+
+.class {
+    margin: 25px;
+    width: 80%;
+}
+
+.title {
+    font-size: 125%;
+    font-weight: bold;
+}
+
+.links {
+    margin: 10px;
+}
+
+footer {
+    border-top: 1px solid black;
+    bottom: 0;
+    font-size: 90%;
+    padding: 10px 30px 10px 30px;
+    position: absolute;
+    width: 100%;
+}
