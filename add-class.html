@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MIT Central</title>
+    <script src="js/add-class.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
+</head>
+
+<body>
+    <main>
+        <div id="header">
+            <ul class="tabs">
+                <li id = "platforms-tab"><a href="platforms.html">Platforms</a></li>
+                <li if = "your-classes-tab"><a href="your-classes.html">Your Classes</a></li>
+             </ul>
+        </div>
+        
+
+        <form onsubmit="addClassToMyClasses();return false;">
+            <label for="class-name-textbox"> Class Name </label>
+            <input class="textbox" type="text" id="class-name-textbox"><br>
+            <label for="lecture-link-textbox"> Lecture Name </label>
+            <input class="textbox" type="text" id="lecture-link-textbox"><br>
+            <input type="submit" value="Submit">
+        </form> 
+
+        <div id="test">
+            
+        </div>
+
+       
+    
+        <footer>
+            <div>Made by jonsh, ndevasia, caragay as part of HackMIT 2020.</div>
+        </footer>
+    </main>
+
+</body>
+      
+</html>
