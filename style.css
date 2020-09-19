@@ -73,6 +73,10 @@ a {
     width: 100%; 
 }
 
+#add-button {
+    cursor: pointer;
+}
+
 .class {
     font-size: 125%;
     margin: 25px;
