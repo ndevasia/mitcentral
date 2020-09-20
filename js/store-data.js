@@ -5,7 +5,6 @@ possibleLinks = [['#lecture-link-textbox', 'Lecture'],
 		['#OH-link-textbox', 'Office Hours']]
 
 function addClass() {
-	console.log("hello");
 	firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
 
@@ -40,5 +39,34 @@ function addClass() {
         else {
         	console.log("logged out");
         }
-	})
+	});
+}
+
+function addPlatform() { 
+	firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+
+        	const db = firebase.firestore();
+			userEmail = db.collection("users").doc(user.email);
+
+			platformName = document.querySelector('#plat-name-submit').value;
+			platformColor = document.querySelector('#plat-color-submit').value;
+			platformLink = document.querySelector('#plat-link-submit').value;
+			
+        	userEmail.update({
+			    platforms: firebase.firestore.FieldValue.arrayUnion(
+				    {
+				    	name: platformName,
+				    	color: platformColor,
+				    	link: platformLink,
+				    }
+			    )
+			});
+                    
+        	return false;
+        }
+        else {
+        	console.log("logged out");
+        }
+	});
 }
