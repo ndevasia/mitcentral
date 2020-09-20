@@ -1,5 +1,5 @@
 function addClass(){
-	// console.log("hello");
+	console.log("hello");
 	firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
         	email = user.email;
