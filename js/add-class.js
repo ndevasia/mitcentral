@@ -16,9 +16,12 @@ function addClass() {
 			actualLinks = []
 			possibleLinks.forEach((possibleLink) => {
 				const source = document.querySelector(possibleLink[0]);
+				console.log('source :' + source);
 				if (source !== null) {
 					const linkInfo = source.value;
+					console.log(linkInfo);
 					if (linkInfo !== '') {
+						console.log(possibleLink[1]);
 						actualLinks.push({'name': possibleLink[1],
 							'link': source.value});
 					}
