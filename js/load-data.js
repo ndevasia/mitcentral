@@ -33,6 +33,8 @@ function createClass(userClass) {
     classTitle.innerText = userClass.name;
     newClass.appendChild(classTitle);
 
+    const links = document.createElement('div');
+    links.classList.add('links');
     userClass.links.forEach((classLink) => {
         console.log("making class link");
         const linkClass = document.createElement('div');
@@ -45,8 +47,9 @@ function createClass(userClass) {
     
         linkInfo.appendChild(linkText);  
         linkClass.appendChild(linkInfo);
-        newClass.appendChild(linkClass);
+        links.appendChild(linkClass);
     });
+    newClass.appendChild(links);
 
     return newClass;
 }
