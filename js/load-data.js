@@ -4,20 +4,25 @@ function loadPlatforms() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var db = firebase.firestore();
-            var docRef = db.collection("users").doc(user.email);
-            docRef.get().then((doc) => {
-                if (doc.exists) {
-                    doc.data().platforms.forEach((platform) => {
-                        const newPlatform = createPlatform(platform);
-                        const platforms = document.getElementById("platforms"); 
-                        const addButton = document.getElementById("add-button");
-                        platforms.insertBefore(newPlatform, addButton); 
-                    });
-                } else {
-                    // this should not happen even if data is empty so idk
-                    console.log("No such document!");
-                }            
-            });
+            var emailRef = db.collection("users").doc(user.email);
+
+            emailRef.update({
+			    classes: firebase.firestore.FieldValue.arrayUnion("TEST")
+			});
+			console.log(emailRef);
+            // docRef.get().then((doc) => {
+            //     if (doc.exists) {
+            //         doc.data().platforms.forEach((platform) => {
+            //             const newPlatform = createPlatform(platform);
+            //             const platforms = document.getElementById("platforms"); 
+            //             const addButton = document.getElementById("add-button");
+            //             platforms.insertBefore(newPlatform, addButton); 
+            //         });
+            //     } else {
+            //         // this should not happen even if data is empty so idk
+            //         console.log("No such document!");
+            //     }            
+            // });
         } else {
           // TODO: user is logged out - redirect to ???
         }
