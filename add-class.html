@@ -37,15 +37,26 @@
 <body>
     <main>
         <div id="header">
-            <span id="page-title"> MIT Central</span>
+            <span id="page-title"> MIT Central: Add A Class</span>
             <a href="platforms.html" class="tab" id="platforms-tab">Platforms</a>
             <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
         <div class="add-classes">
         <form onsubmit="addClass();return false;">
             <div class="add-class-field">
+              If you don't want to add a link for a certain field, you can leave it blank.
+            </div>
+
+            <div class="add-class-field">
               <label for="class-name-textbox" class="textbox-label">Class Name</label>
               <input class="textbox" type="text" id="class-name-textbox">
+            </div>
+
+            <div class="add-class-field">
+              <span class="textbox-label">Representative Color</span>
+              <label for="class-color" id="class-color-label">
+                <input type="color" id="class-color" onchange="changeClassColorInput(this)">
+              </label>
             </div>
 
             <div class="add-class-field">

@@ -30,7 +30,7 @@ function addClass(){
         	
         }
         else {
-        	consel.log("logged out");
+        	console.log("logged out");
         }
 	})
 }
