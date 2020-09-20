@@ -44,8 +44,19 @@
         <div class="add-classes">
         <form onsubmit="addClasses();return false;">
             <div class="add-class-field">
+              If you don't want to add a link for a certain field, you can leave it blank.
+            </div>
+
+            <div class="add-class-field">
               <label for="class-name-textbox" class="textbox-label">Class Name</label>
               <input class="textbox" type="text" id="class-name-textbox">
+            </div>
+
+            <div class="add-class-field">
+              <span class="textbox-label">Representative Color</span>
+              <label for="class-color" id="class-color-label">
+                <input type="color" id="class-color" onchange="changeClassColorInput(this)">
+              </label>
             </div>
 
             <div class="add-class-field">
