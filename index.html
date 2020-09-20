@@ -31,8 +31,39 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
 </head>
-<body onload="loadClasses();">
+<body onload="">
+    <script >
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.firebase,
+  ],
+  tosUrl: 'google.com',
+};
+ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+
+
 
   <form>
     <div>

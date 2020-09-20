@@ -41,66 +41,100 @@
             <a href="platforms.html" class="tab" id="platforms-tab">Platforms</a>
             <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
+
         <div class="addClasses">
         <form onsubmit="redirect();return false;">
-            <label for="class-name-textbox">Class Name</label>
-            <input class="textbox" type="text" id="class-name-textbox"><br><br>
-            <label for="lecture-link-textbox">Lecture Link</label>
+            <div class="add-class-field">
+              <label for="class-name-textbox" class="textbox-label">Class Name</label>
+              <input class="textbox" type="text" id="class-name-textbox">
+            </div>
+
+            <div class="add-class-field">
+
+                <label for="lecture-link-textbox" class="textbox-label">Lecture Link</label>
+                <input class="textbox" type="url" id="lecture-link-textbox">
+
+                <div class="scheduler">
+                  <label for="lecture-link-textbox">Time:</label>
+                  <input type="time" id="lectureTimeSelect" name="lectureTimeSelect">
+
+                  <div class="weekdays-selector">
+                    <input type="checkbox" id="weekday-mon-lec" class="weekday" />
+                    <label for="weekday-mon-lec">M</label>
+                    <input type="checkbox" id="weekday-tue-lec" class="weekday" />
+                    <label for="weekday-tue-lec">T</label>
+                    <input type="checkbox" id="weekday-wed-lec" class="weekday" />
+                    <label for="weekday-wed-lec">W</label>
+                    <input type="checkbox" id="weekday-thu-lec" class="weekday" />
+                    <label for="weekday-thu-lec">R</label>
+                    <input type="checkbox" id="weekday-fri-lec" class="weekday" />
+                    <label for="weekday-fri-lec">F</label>
+                  </div>
+                </div>
+            </div>
+
+            <div class="add-class-field">
+            <label for="recitation-link-textbox" class="textbox-label">Recitation Link</label>
               <input class="textbox" type="url" id="lecture-link-textbox">
-              <div class="weekDays-selector">
-                <input type="checkbox" id="weekday-mon-lec" class="weekday" />
-                <label for="weekday-mon-lec">M</label>
-                <input type="checkbox" id="weekday-tue-lec" class="weekday" />
-                <label for="weekday-tue-lec">T</label>
-                <input type="checkbox" id="weekday-wed-lec" class="weekday" />
-                <label for="weekday-wed-lec">W</label>
-                <input type="checkbox" id="weekday-thu-lec" class="weekday" />
-                <label for="weekday-thu-lec">R</label>
-                <input type="checkbox" id="weekday-fri-lec" class="weekday" />
-                <label for="weekday-fri-lec">F</label>
-              </div>
-              <label for="lecture-link-textbox">Lecture Time </label>
-              <input type="time" id="lectureTimeSelect" name="lectureTimeSelect">
-            <br><br>
-            <label for="recitation-link-textbox">Recitation Link</label>
-              <input class="textbox" type="url" id="lecture-link-textbox">
-              <div class="weekDays-selector">
-                <input type="checkbox" id="weekday-mon-rec" class="weekday" />
-                <label for="weekday-mon-rec">M</label>
-                <input type="checkbox" id="weekday-tue-rec" class="weekday" />
-                <label for="weekday-tue-rec">T</label>
-                <input type="checkbox" id="weekday-wed-rec" class="weekday" />
-                <label for="weekday-wed-rec">W</label>
-                <input type="checkbox" id="weekday-thu-rec" class="weekday" />
-                <label for="weekday-thu-rec">R</label>
-                <input type="checkbox" id="weekday-fri-rec" class="weekday" />
-                <label for="weekday-fri-rec">F</label>
-              </div>
-              <label for="recitation-link-textbox">Recitation Time </label>
-              <input type="time" id="recitationTimeSubmit" name="recitationTimeSubmit">
-            <br><br>
-            <label for="lab-link-textbox">Lab Link</label>
+
+              <div class="scheduler">
+                <label for="recitation-link-textbox">Time:</label>
+                <input type="time" id="recitationTimeSubmit" name="recitationTimeSubmit">
+
+                <div class="weekdays-selector">
+                  <input type="checkbox" id="weekday-mon-rec" class="weekday" />
+                  <label for="weekday-mon-rec">M</label>
+                  <input type="checkbox" id="weekday-tue-rec" class="weekday" />
+                  <label for="weekday-tue-rec">T</label>
+                  <input type="checkbox" id="weekday-wed-rec" class="weekday" />
+                  <label for="weekday-wed-rec">W</label>
+                  <input type="checkbox" id="weekday-thu-rec" class="weekday" />
+                  <label for="weekday-thu-rec">R</label>
+                  <input type="checkbox" id="weekday-fri-rec" class="weekday" />
+                  <label for="weekday-fri-rec">F</label>
+                </div>
+              </div>   
+            </div>
+
+            <div class="add-class-field">
+            <label for="lab-link-textbox" class="textbox-label">Lab Link</label>
               <input class="textbox" type="url" id="lab-link-textbox">
-              <div class="weekDays-selector">
-                <input type="checkbox" id="weekday-mon-lab" class="weekday" />
-                <label for="weekday-mon-lab">M</label>
-                <input type="checkbox" id="weekday-tue-lab" class="weekday" />
-                <label for="weekday-tue-lab">T</label>
-                <input type="checkbox" id="weekday-wed-lab" class="weekday" />
-                <label for="weekday-wed-lab">W</label>
-                <input type="checkbox" id="weekday-thu-lab" class="weekday" />
-                <label for="weekday-thu-lab">R</label>
-                <input type="checkbox" id="weekday-fri-lab" class="weekday" />
-                <label for="weekday-fri-lab">F</label>
+
+              <div class="scheduler">
+                <label for="recitation-link-textbox">Time:</label>
+                <input type="time" id="recitationTimeSubmit" name="recitationTimeSubmit">
+
+                <div class="weekdays-selector">
+                  <input type="checkbox" id="weekday-mon-lab" class="weekday" />
+                  <label for="weekday-mon-lab">M</label>
+                  <input type="checkbox" id="weekday-tue-lab" class="weekday" />
+                  <label for="weekday-tue-lab">T</label>
+                  <input type="checkbox" id="weekday-wed-lab" class="weekday" />
+                  <label for="weekday-wed-lab">W</label>
+                  <input type="checkbox" id="weekday-thu-lab" class="weekday" />
+                  <label for="weekday-thu-lab">R</label>
+                  <input type="checkbox" id="weekday-fri-lab" class="weekday" />
+                  <label for="weekday-fri-lab">F</label>
+                </div>
               </div>
+
               <label for="recitation-link-textbox">Recitation Time </label>
               <input type="time" id="recitationTimeSubmit" name="recitationTimeSubmit">
             <br><br>
-            <label for="class-website-textbox">Class Website</label>
-            <input class="textbox" type="url" id="class-website-textbox"><br><br>
-            <label for="OH-link-textbox">Office Hours Link</label>
-            <input class="textbox" type="url" id="OH-link-textbox"><br>
-            <input type="submit" id="submit" value="Submit">
+            
+
+            <div class="add-class-field">
+              <label for="class-website-textbox"class="textbox-label">Class Website</label>
+              <input class="textbox" type="url" id="class-website-textbox"><br><br>
+            </div>
+
+            <div class="add-class-field">
+              <label for="OH-link-textbox" class="textbox-label">Office Hours Link</label>
+              <input class="textbox" type="url" id="OH-link-textbox"><br>
+            </div>
+
+            <input type="submit" onclick="location.href='your-classes.html';" id="submit" value="Submit">
+
         </form> 
         </div>
         

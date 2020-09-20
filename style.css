@@ -115,11 +115,13 @@ a {
     margin: 10px;
 }
 
-.addClasses input[type=text],.addClasses input[type=url] {
+.add-classes input[type=text],
+.add-classes input[type=url],
+.add-classes input[type=submit] {
   padding:10px;
   margin:10px 0; 
   border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow: 2px 2px 2px grey;
   border: 2px solid #eee;
   border-radius:10px;
   width:30%;
@@ -127,11 +129,33 @@ a {
   font-size: inherit;
 }
 
-.weekDays-selector input {
+.add-classes input[type=submit] {
+    margin: 30px;
+}
+
+.add-classes input[type=submit]:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.scheduler {
+    display: block;
+}
+
+.add-class-field {
+    margin: 30px;
+}
+
+.textbox-label {
+    display: block;
+    font-weight: bold;
+}
+
+.weekdays-selector input {
   display: none!important;
 }
 
-.weekDays-selector input[type=checkbox] + label {
+.weekdays-selector input[type=checkbox] + label {
   display: inline-block;
   border-radius: 6px;
   background: #dddddd;
@@ -144,8 +168,8 @@ a {
   margin:10px 0;
 }
 
-.weekDays-selector input[type=checkbox]:checked + label {
-  background: #2AD705; 
+.weekdays-selector input[type=checkbox]:checked + label {
+  background: #34b119; 
   color: #ffffff;
 }
 
