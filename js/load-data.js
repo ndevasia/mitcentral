@@ -6,23 +6,19 @@ function loadPlatforms() {
             var db = firebase.firestore();
             var emailRef = db.collection("users").doc(user.email);
 
-            emailRef.update({
-			    classes: firebase.firestore.FieldValue.arrayUnion("TEST")
-			});
-			console.log(emailRef);
-            // docRef.get().then((doc) => {
-            //     if (doc.exists) {
-            //         doc.data().platforms.forEach((platform) => {
-            //             const newPlatform = createPlatform(platform);
-            //             const platforms = document.getElementById("platforms"); 
-            //             const addButton = document.getElementById("add-button");
-            //             platforms.insertBefore(newPlatform, addButton); 
-            //         });
-            //     } else {
-            //         // this should not happen even if data is empty so idk
-            //         console.log("No such document!");
-            //     }            
-            // });
+            docRef.get().then((doc) => {
+                if (doc.exists) {
+                    doc.data().platforms.forEach((platform) => {
+                        const newPlatform = createPlatform(platform);
+                        const platforms = document.getElementById("platforms"); 
+                        const addButton = document.getElementById("add-button");
+                        platforms.insertBefore(newPlatform, addButton); 
+                    });
+                } else {
+                    // this should not happen even if data is empty so idk
+                    console.log("No such document!");
+                }            
+            });
         } else {
           // TODO: user is logged out - redirect to ???
         }
@@ -52,10 +48,14 @@ function loadClasses() {
             var docRef = db.collection("users").doc(user.email);
             docRef.get().then((doc) => {
                 if (doc.exists) {
+                	console.log(doc.data());
                     doc.data().classes.forEach((userClass) => {
+                    	
                         const newClass = createClass(userClass);
-                        const classes = document.getElementById("testing"); 
+                        const classes = document.getElementById("classes"); 
                         const addButton = document.getElementById("add-button");
+                        console.log(user.email);
+                        console.log(classes);
                         classes.insertBefore(newClass, addButton);
                     });
                 } else {
