@@ -17,8 +17,11 @@ function addClass() {
 			possibleLinks.forEach((possibleLink) => {
 				const source = document.querySelector(possibleLink[0]);
 				if (source !== null) {
-					actualLinks.push({'name': possibleLink[1],
-						'link': source.value})
+					const linkInfo = source.value;
+					if (linkInfo !== '') {
+						actualLinks.push({'name': possibleLink[1],
+							'link': source.value});
+					}
 				}
 			});
 			
