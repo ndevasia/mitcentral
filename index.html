@@ -1,9 +1,35 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Authentication Example</title>
-  <script src="js/load-data.js"></script>
-  <script src="js/add-class.js"></script>
+    <meta charset="UTF-8">
+    <title>MIT Central</title>
+    <script src="js/firebase.js"></script>
+    <script src="js/styling.js"></script>
+    <script src="js/load-data.js"></script>
+    <script src="js/storedata.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDqJaHM0T7Au-NQc2cFstjea_5LnaYiVJA",
+        authDomain: "mit-central.firebaseapp.com",
+        databaseURL: "https://mit-central.firebaseio.com",
+        projectId: "mit-central",
+        storageBucket: "mit-central.appspot.com",
+        messagingSenderId: "415588895548",
+        appId: "1:415588895548:web:ff605fe5fae301ba0c6c39",
+        measurementId: "G-WBBWS6BJJR"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 </head>
 
 <body onload="loadClasses();addClass();">
@@ -34,7 +60,9 @@
       <button id="sign-out">Sign Out</button>
     </div>
   </form>
-  <a href="your-classes.html">link to page</a>
+  <div id="testing"></div>
+
+
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
@@ -89,8 +117,14 @@
 
       //TODO: dont add to database if error message
       db.collection("users").doc(email).set({
-              classes: {},
-              platforms: {},
+              classes: [{
+                  'name': '6.031', 'color': '#f58585', 
+                  'links': [
+                      {'name': 'Lecture', 'link': 'https://canvas.mit.edu'},
+                      {'name': 'Website', 'link': 'https://www.piazza.com'}
+                    ]
+                }],
+              platforms: [],
           })
       .catch(function(error) {
           console.error("Error adding document: ", error);
