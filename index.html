@@ -40,25 +40,25 @@
     <script >
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      return true;
-    },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-      document.getElementById('loader').style.display = 'none';
-    }
-  },
-  signInOptions: [
-    firebase.auth.EmailAuthProvider.firebase,
-  ],
-  tosUrl: 'google.com',
-};
-ui.start('#firebaseui-auth-container', uiConfig);
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                // User successfully signed in.
+                // Return type determines whether we continue the redirect automatically
+                // or whether we leave that to developer to handle.
+                return true;
+                },
+                uiShown: function() {
+                // The widget is rendered.
+                // Hide the loader.
+                document.getElementById('loader').style.display = 'none';
+                }
+            },
+            signInOptions: [
+                firebase.auth.EmailAuthProvider.firebase,
+            ],
+            tosUrl: 'google.com',
+        };
+        ui.start('#firebaseui-auth-container', uiConfig);
     </script>
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
