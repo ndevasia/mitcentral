@@ -42,7 +42,7 @@
             <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
         <div class="add-classes">
-        <form onsubmit="addClass();return false;">
+        <form method="POST" action="your-classes.html" onsubmit="addClass();return false;" >
             <div class="add-class-field">
               If you don't want to add a link for a certain field, you can leave it blank.
             </div>
@@ -138,8 +138,8 @@
               <label for="OH-link-textbox" class="textbox-label">Office Hours Link</label>
               <input class="textbox" type="url" id="OH-link-textbox"><br>
             </div>
-
-            <input type="submit" onclick="location.href='your-classes.html';" id="submit" value="Submit">
+            
+            <input type="submit" id="submit" value="Submit"> 
         </form> 
         </div>
         

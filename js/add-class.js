@@ -8,6 +8,7 @@ function addClass(){
         	className = document.querySelector('#class-name-textbox').value;
         	lectureLink = document.querySelector('#lecture-link-textbox').value;
         	classWebsite = document.querySelector('#class-website-textbox').value;
+            console.log(userEmail);
         	userEmail.update({
 			    classes: firebase.firestore.FieldValue.arrayUnion(
 				    {
@@ -24,9 +25,7 @@ function addClass(){
         		// dataArray.data().append("TESTING");
         		console.log(dataArray.data().classes);
         	});
-
-   //  	   	
-			// console.log(firebase.firestore.FieldValue);
+            
         	
         }
         else {
