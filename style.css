@@ -89,6 +89,14 @@ a {
     font-size: 300%;
 }
 
+#classes {
+    display: inline-flex;
+    flex-wrap : wrap;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
 .class {
     font-size: 150%;
     margin: 25px;
@@ -97,7 +105,8 @@ a {
 
 .class-link {
     display: inline;
-    margin: 10px;
+    font-size: 125%;
+    margin: 20px;
 }
 
 .class-link:hover {
