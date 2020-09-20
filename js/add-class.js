@@ -33,13 +33,9 @@ function addClass() {
 				    	links: actualLinks,
 				    }
 			    )
-			});
-        	userEmail.get().then((dataArray) => {
-        		// dataArray.data().append("TESTING");
-        		console.log(dataArray.data().classes);
-        	});
-            
-        	
+			}).then(console.log("end")).then(document.location.href="your-classes.html");
+                    
+        	return false;
         }
         else {
         	console.log("logged out");
