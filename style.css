@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap');
+
 :root {
     font-family: 'Open Sans', sans-serif;
 }
 
 #header {
+    font-family: "Bitter", sans-serif;
     align-items: center;
-    background-color: #e5ecf8;
+    background-color: #FD93A7;
+    color: #1D3B4E;
     display: flex;
     font-size: 175%;
-    font-weight: bold;
     margin: 0;
     padding: 0;
 }
@@ -25,10 +28,11 @@
     margin: 0;
     padding: 20px 0px 20px 0px;
     width: 20%;
+    color: #1D3B4E;
 }
 
 .tab:hover {
-    background-color: #3e7aab;
+    background-color: #FA5070;
   }
 
 body {
@@ -42,8 +46,8 @@ main {
 }
 
 .box {
-    background-color: #e5ecf8;
-    border: 3px solid #08214a;
+    background-color: #D8F8FF;
+    border: 3px solid #51C9D2;
     border-radius: 10px;
     box-shadow: 2px 2px 2px grey;
     text-align: center;
@@ -79,6 +83,7 @@ a {
     font-weight: bold;
     justify-content: center;
     width: 100%; 
+    color: black;
 }
 
 .platform:hover {
