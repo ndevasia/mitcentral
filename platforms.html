@@ -7,7 +7,7 @@
     <script src="js/firebase.js"></script>
     <script src="js/styling.js"></script>
     <script src="js/load-data.js"></script>
-    <script src="js/storedata.js"></script>
+    <script src="js/store-data.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
@@ -80,9 +80,9 @@
         </div>
         
         <div class="hiddenField" id="hiddenPlatformFields" style="display: none;">
-            <input type='text' id='platNameSubmit'>Platform name</input><br>
-            <input type='url' id='platLinkSubmit'>Platform link</input>
-            <button onclick='submitPlatform()'>Submit</button>
+            <input type='text' id='plat-name-submit'>Platform name</input><br>
+            <input type='url' id='plat-link-submit'>Platform link</input>
+            <button onclick='addPlatform()'>Submit</button>
         </div>
     
         <footer>

@@ -7,8 +7,7 @@
     <script src="js/firebase.js"></script>
     <script src="js/styling.js"></script>
     <script src="js/load-data.js"></script>
-    <script src="js/storedata.js"></script>
-    <script src="js/add-class.js"></script>
+    <script src="js/store-data.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js" integrity="sha512-yocoLferfPbcwpCMr8v/B0AB4SWpJlouBwgE0D3ZHaiP1nuu5djZclFEIj9znuqghaZ3tdCMRrreLoM8km+jIQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -85,7 +84,7 @@
 
             <div class="add-class-field">
             <label for="recitation-link-textbox" class="textbox-label">Recitation Link</label>
-              <input class="textbox" type="url" id="lecture-link-textbox">
+              <input class="textbox" type="url" id="recitation-link-textbox">
 
               <div class="scheduler">
                 <label for="recitation-link-textbox">Time:</label>
@@ -111,8 +110,8 @@
               <input class="textbox" type="url" id="lab-link-textbox">
 
               <div class="scheduler">
-                <label for="recitation-link-textbox">Time:</label>
-                <input type="time" id="recitationTimeSubmit" name="recitationTimeSubmit">
+                <label for="lab-link-textbox">Time:</label>
+                <input type="time" id="labTimeSubmit" name="labimeSubmit">
 
                 <div class="weekdays-selector">
                   <input type="checkbox" id="weekday-mon-lab" class="weekday" />
@@ -138,8 +137,8 @@
               <label for="OH-link-textbox" class="textbox-label">Office Hours Link</label>
               <input class="textbox" type="url" id="OH-link-textbox"><br>
             </div>
-
-            <input type="submit" id="submit" value="Submit">
+            
+            <input type="submit" id="submit" value="Submit"> 
         </form> 
         </div>
         
