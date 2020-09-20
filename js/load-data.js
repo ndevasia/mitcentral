@@ -6,7 +6,7 @@ function loadPlatforms() {
             var db = firebase.firestore();
             var emailRef = db.collection("users").doc(user.email);
 
-            docRef.get().then((doc) => {
+            emailRef.get().then((doc) => {
                 if (doc.exists) {
                     doc.data().platforms.forEach((platform) => {
                         const newPlatform = createPlatform(platform);
