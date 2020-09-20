@@ -37,3 +37,11 @@ function changeClassColorInput(colorParam) {
     colorLabel.style.border = '3px solid ' + color.hex();
     colorLabel.style.backgroundColor = color.desaturate(1).brighten(2).hex();
 }
+
+/* Change the color of the color input in the add platform form */
+function changePlatformColorInput(colorParam) {
+    const color = chroma(colorParam.value);
+    const colorLabel = document.getElementById('platform-color-label');
+    colorLabel.style.border = '3px solid ' + color.hex();
+    colorLabel.style.backgroundColor = color.desaturate(1).brighten(2).hex();
+}

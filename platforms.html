@@ -82,6 +82,9 @@
         <div class="hiddenField" id="hiddenPlatformFields" style="display: none;">
             <input type='text' id='platNameSubmit'>Platform name</input><br>
             <input type='url' id='platLinkSubmit'>Platform link</input>
+            <label for="platform-color" id="platform-color-label">
+                <input type="color" id="platform-color" onchange="changePlatformColorInput(this)">
+            </label>
             <button onclick='submitPlatform()'>Submit</button>
         </div>
     
