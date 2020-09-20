@@ -1,3 +1,44 @@
+//TODO : these load functions are awfully similar...
+
+function loadPlatforms() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var db = firebase.firestore();
+            var docRef = db.collection("users").doc(user.email);
+            docRef.get().then((doc) => {
+                if (doc.exists) {
+                    doc.data().platforms.forEach((platform) => {
+                        const newPlatform = createPlatform(platform);
+                        const platforms = document.getElementById("platforms"); 
+                        const addButton = document.getElementById("add-button");
+                        platforms.insertBefore(newPlatform, addButton); 
+                    });
+                } else {
+                    // this should not happen even if data is empty so idk
+                    console.log("No such document!");
+                }            
+            });
+        } else {
+          // TODO: user is logged out - redirect to ???
+        }
+      });
+}
+
+function createPlatform(platform) {
+    const newPlatform = document.createElement('div');
+    newPlatform.classList.add('box');
+    newPlatform.classList.add('platform');
+
+    const color = chroma(platform.color);
+    newPlatform.style.border = '3px solid ' + color.hex();
+    newPlatform.style.backgroundColor = color.desaturate(1).brighten(2).hex();
+
+    newPlatform.appendChild(createLink(platform.name, platform.link));
+    return newPlatform;
+}
+
+
+
 function loadClasses() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -8,9 +49,9 @@ function loadClasses() {
                 if (doc.exists) {
                     doc.data().classes.forEach((userClass) => {
                         const newClass = createClass(userClass);
-                        const classes = document.getElementById("classes"); 
+                        const classes = document.getElementById("testing"); 
                         const addButton = document.getElementById("add-button");
-                        classes.insertBefore(newClass, addButton);    
+                        classes.insertBefore(newClass, addButton);
                     });
                 } else {
                     // this should not happen even if data is empty so idk
@@ -43,17 +84,20 @@ function createClass(userClass) {
         console.log("making class link");
         const linkClass = document.createElement('div');
         linkClass.classList.add('class-link');
-
-        const linkInfo = document.createElement('a');
-        linkInfo.href = classLink.link;
-        linkInfo.target = '_blank';
-        const linkText = document.createTextNode(classLink.name); 
-    
-        linkInfo.appendChild(linkText);  
+        const linkInfo = createLink(classLink.name, classLink.link);
         linkClass.appendChild(linkInfo);
         links.appendChild(linkClass);
     });
     newClass.appendChild(links);
 
     return newClass;
+}
+
+function createLink(text, destination) {
+    const linkInfo = document.createElement('a');
+    linkInfo.href = destination;
+    linkInfo.target = '_blank';
+    const linkText = document.createTextNode(text); 
+    linkInfo.appendChild(linkText);
+    return linkInfo;
 }
