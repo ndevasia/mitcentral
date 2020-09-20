@@ -8,11 +8,23 @@
     <script src="js/firebase.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
-    <!--Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDqJaHM0T7Au-NQc2cFstjea_5LnaYiVJA",
+        authDomain: "mit-central.firebaseapp.com",
+        databaseURL: "https://mit-central.firebaseio.com",
+        projectId: "mit-central",
+        storageBucket: "mit-central.appspot.com",
+        messagingSenderId: "415588895548",
+        appId: "1:415588895548:web:ff605fe5fae301ba0c6c39",
+        measurementId: "G-WBBWS6BJJR"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 
     <link rel="stylesheet" href="style.css">
     <link id="favicon" rel="shortcut icon" href="./images/favicon.ico">
@@ -26,7 +38,7 @@
             <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
 
-        <form onsubmit="addClassToMyClasses();return false;">
+        <form onsubmit="addClass();return false;">
             <label for="class-name-textbox">Class Name</label>
             <input class="textbox" type="text" id="class-name-textbox"><br><br>
             <label for="lecture-link-textbox">Lecture Link</label>
@@ -94,32 +106,6 @@
     </main>
 
 
-<!-- 
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyDqJaHM0T7Au-NQc2cFstjea_5LnaYiVJA",
-        authDomain: "mit-central.firebaseapp.com",
-        databaseURL: "https://mit-central.firebaseio.com",
-        projectId: "mit-central",
-        storageBucket: "mit-central.appspot.com",
-        messagingSenderId: "415588895548",
-        appId: "1:415588895548:web:ff605fe5fae301ba0c6c39",
-        measurementId: "G-WBBWS6BJJR"
-      };
-      // Initialize Firebase
-      const firebase = require("firebase");
-    // Required for side-effects
-      require("firebase/firestore");
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-   
-
-  <script>    
-
-  </script> -->
 </body>
       
 </html>
