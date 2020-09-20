@@ -30,7 +30,7 @@ function addClass() {
 				    	links: actualLinks,
 				    }
 			    )
-			}).then(console.log("end")).then(document.location.href="your-classes.html");
+			});
                     
         	return false;
         }
