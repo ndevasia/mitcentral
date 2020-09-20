@@ -117,16 +117,42 @@ a {
 
 .add-classes input[type=text],
 .add-classes input[type=url],
+.add-classes input[type=submit],
+.add-classes input[type=time] {
+    border: 0;
+    box-shadow: 2px 2px 2px grey;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 10px;
+    margin: 10px 0; 
+}
+
+.add-classes input[type=text],
+.add-classes input[type=url],
 .add-classes input[type=submit] {
-  padding:10px;
-  margin:10px 0; 
-  border:0;
-  box-shadow: 2px 2px 2px grey;
-  border: 2px solid #eee;
-  border-radius:10px;
-  width:30%;
-  font-family:inherit;
-  font-size: inherit;
+    width: 30%;
+}
+
+input[type="color"] {
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+}
+  
+input[type="color" i] {
+    height: 35px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px 0; 
+}
+  
+#class-color-label {
+    box-shadow: 2px 2px 2px grey;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .add-classes input[type=submit] {
@@ -149,6 +175,8 @@ a {
 .textbox-label {
     display: block;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
 .weekdays-selector input {

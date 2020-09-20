@@ -29,3 +29,11 @@ function colorTab() {
         }
     });
 }
+
+/* Change the color of the color input in the add class form */
+function changeClassColorInput(colorParam) {
+    const color = chroma(colorParam.value);
+    const colorLabel = document.getElementById('class-color-label');
+    colorLabel.style.border = '3px solid ' + color.hex();
+    colorLabel.style.backgroundColor = color.desaturate(1).brighten(2).hex();
+}
