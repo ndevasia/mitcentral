@@ -39,13 +39,8 @@
             <a href="platforms.html" class="tab" id="platforms-tab">Platforms</a>
             <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
-<<<<<<< HEAD
-        <div id="addClasses">
-          <form onsubmit="addClassToMyClasses();return false;">
-=======
-
-        <form onsubmit="addClass();return false;">
->>>>>>> 2c2d1165deaa5fc61cd3ba9e80ade4ac7a1fe3fc
+        <div class="addClasses">
+        <form onsubmit="addClasses();return false;">
             <label for="class-name-textbox">Class Name</label>
             <input class="textbox" type="text" id="class-name-textbox"><br><br>
             <label for="lecture-link-textbox">Lecture Link</label>
@@ -103,7 +98,7 @@
             <input class="textbox" type="url" id="class-website-textbox"><br><br>
             <label for="OH-link-textbox">Office Hours Link</label>
             <input class="textbox" type="url" id="OH-link-textbox"><br>
-            <input type="submit" onclick="redirect()" id="submit" value="Submit">
+            <input type="submit" onclick="location.href='your-classes.html';" id="submit" value="Submit">
         </form> 
         </div>
         

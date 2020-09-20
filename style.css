@@ -115,14 +115,16 @@ a {
     margin: 10px;
 }
 
-.addClasses input[type=text] {
+.addClasses input[type=text],.addClasses input[type=url] {
   padding:10px;
+  margin:10px 0; 
   border:0;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-}
-
-.border-customized-input {
-   border: 2px solid #eee;
+  border: 2px solid #eee;
+  border-radius:10px;
+  width:30%;
+  font-family:inherit;
+  font-size: inherit;
 }
 
 .weekDays-selector input {
@@ -139,6 +141,7 @@ a {
   line-height: 40px;
   text-align: center;
   cursor: pointer;
+  margin:10px 0;
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
