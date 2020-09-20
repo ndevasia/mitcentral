@@ -43,6 +43,7 @@ function addClass() {
 }
 
 function addPlatform() { 
+	console.log("top");
 	firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
 
@@ -50,7 +51,7 @@ function addPlatform() {
 			userEmail = db.collection("users").doc(user.email);
 
 			platformName = document.querySelector('#plat-name-submit').value;
-			platformColor = document.querySelector('#plat-color-submit').value;
+			platformColor = document.querySelector('#platform-color').value;
 			platformLink = document.querySelector('#plat-link-submit').value;
 			
         	userEmail.update({
@@ -62,11 +63,24 @@ function addPlatform() {
 				    }
 			    )
 			});
-                    
+            console.log("bottom");
         	return false;
         }
         else {
         	console.log("logged out");
         }
 	});
+}
+
+
+function unhide() {
+  const x = document.getElementById("hiddenPlatformFields");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+  	const children = x.children;
+  	for (var i = 0; i < children.length; i++){
+  		children[i].value = '';
+  	}
+  }
 }

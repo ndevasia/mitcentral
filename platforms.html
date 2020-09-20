@@ -79,16 +79,15 @@
             </div>
         </div>
         
-        <div class="hiddenField" id="hiddenPlatformFields" style="display: none;">
-
-            <input type='text' id='platNameSubmit'>Platform name</input><br>
-            <input type='url' id='platLinkSubmit'>Platform link</input>
+        <form onsubmit='addPlatform();return false;' class="hiddenField" id="hiddenPlatformFields" style="display: none;">
+            <input type='text' id='plat-name-submit'>Platform name</input><br>
+            <input type='url' id='plat-link-submit'>Platform link</input>
             <label for="platform-color" id="platform-color-label">
                 <input type="color" id="platform-color" onchange="changePlatformColorInput(this)">
             </label>
-            <button onclick='addPlatform()'>Submit</button>
+            <input type='submit'>Submit</input>
 
-        </div>
+        </form>
     
         <footer>
             <div>Made by jonsh, ndevasia, caragay as part of HackMIT 2020.</div>

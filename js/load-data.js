@@ -33,8 +33,9 @@ function createPlatform(platform) {
     const color = chroma(platform.color);
     newPlatform.style.border = '3px solid ' + color.hex();
     newPlatform.style.backgroundColor = color.desaturate(1).brighten(2).hex();
-
-    newPlatform.appendChild(createLink(platform.name, platform.link));
+    newLink = createLink(platform.name, platform.link);
+    newLink.classList.add('platform-button');
+    newPlatform.appendChild(newLink);
     return newPlatform;
 }
 
