@@ -8,6 +8,7 @@ function addClass() {
 	console.log("hello");
 	firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+
         	const db = firebase.firestore();
 			userEmail = db.collection("users").doc(user.email);
 			className = document.querySelector('#class-name-textbox').value;
@@ -34,9 +35,7 @@ function addClass() {
         		// dataArray.data().append("TESTING");
         		console.log(dataArray.data().classes);
         	});
-
-   //  	   	
-			// console.log(firebase.firestore.FieldValue);
+            
         	
         }
         else {
