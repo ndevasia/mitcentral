@@ -71,3 +71,7 @@ function unhide() {
   	}
   }
 }
+
+function redirect(){
+  document.location.href="your-classes.html"
+}
