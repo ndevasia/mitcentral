@@ -115,6 +115,16 @@ a {
     margin: 10px;
 }
 
+.addClasses input[type=text] {
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.border-customized-input {
+   border: 2px solid #eee;
+}
+
 .weekDays-selector input {
   display: none!important;
 }
@@ -132,7 +142,7 @@ a {
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
-  background: #2AD705;
+  background: #2AD705; 
   color: #ffffff;
 }
 

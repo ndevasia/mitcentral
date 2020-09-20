@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>MIT Central</title>
-    <script src="js/add-class.js"></script>
     <script src="js/firebase.js"></script>
-
+    <script src="js/storedata.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
     <!--Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -25,8 +24,8 @@
             <a href="platforms.html" class="tab" id="platforms-tab">Platforms</a>
             <a href="your-classes.html" class="tab" id="your-classes-tab">Your Classes</a>
         </div>
-
-        <form onsubmit="addClassToMyClasses();return false;">
+        <div id="addClasses">
+          <form onsubmit="addClassToMyClasses();return false;">
             <label for="class-name-textbox">Class Name</label>
             <input class="textbox" type="text" id="class-name-textbox"><br><br>
             <label for="lecture-link-textbox">Lecture Link</label>
@@ -84,8 +83,10 @@
             <input class="textbox" type="url" id="class-website-textbox"><br><br>
             <label for="OH-link-textbox">Office Hours Link</label>
             <input class="textbox" type="url" id="OH-link-textbox"><br>
-            <input type="submit" id="submit" value="Submit">
+            <input type="submit" onclick="redirect()" id="submit" value="Submit">
         </form> 
+        </div>
+        
 
     
         <footer>
